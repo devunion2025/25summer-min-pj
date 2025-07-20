@@ -1,3 +1,5 @@
+#베팅 가위바위보 게임
+
 ```c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
@@ -89,3 +91,8 @@ int main() {
 
     return 0;
 }
+
+
+## C언어
+
+## 이지원
