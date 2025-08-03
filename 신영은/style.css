@@ -1,0 +1,441 @@
+/* 전체 배경: 산리오 느낌 파스텔 그라데이션 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #ffeaf5, #eaf7ff, #d9faff);
+  text-align: center;
+}
+
+/* 페이지 등장 애니메이션 */
+.fade-in {
+  animation: slideFadeIn 1s ease-out;
+}
+
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px); /* 아래에서 시작 */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* 제자리로 */
+  }
+}
+
+.container {
+  padding-top: 40px;
+}
+
+.main-gif {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #3c3c3c;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+/* 메뉴 컨테이너 */
+.menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 20px;
+}
+
+/* 각 메뉴 항목 */
+.menu-item {
+  width: 100px;
+}
+
+/* 링크 기본 스타일 제거 */
+.menu-item a {
+  text-decoration: none; /* 밑줄 제거 */
+  color: inherit;
+}
+
+.menu-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.menu-item img:hover {
+  transform: scale(1.1);
+}
+
+.menu-item p {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #333;
+}
+
+
+
+.intro-body {
+  background: linear-gradient(to bottom, #f0f9ff, #d0e9f6);
+  font-family: 'Helvetica', sans-serif;
+  color: #333;
+  padding: 40px 20px;
+}
+
+.intro-container {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+.intro-title {
+  font-size: 2.5em;
+  margin-bottom: 5px;
+}
+
+.intro-sub {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.kyodo-img {
+  width: 200px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.card h2 {
+  margin-bottom: 10px;
+}
+
+.card ul {
+  padding-left: 20px;
+  list-style-type: "💡 ";
+}
+
+.highlight {
+  background: #ffeef4;
+}
+
+.rank {
+  font-weight: bold;
+  font-size: 1.4em;
+  color: #d6336c;
+}
+
+.fan-love ul {
+  list-style: none;
+  padding: 0;
+}
+
+.fan-love li {
+  margin-bottom: 8px;
+}
+
+.quiz {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #f3f8ff;
+  border-left: 4px solid #7fb4e2;
+  border-radius: 10px;
+}
+
+.answer {
+  font-weight: bold;
+  color: #444;
+  margin-top: 10px;
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background: #a0d2eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.back-button:hover {
+  background: #87c0e6;
+}
+
+/* 애니메이션 */
+.fade-in {
+  animation: slideFadeIn 1s ease-out;
+}
+
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 친구들 페이지용 */
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.friend-card {
+  width: 200px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 15px;
+  margin: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: slideUp 1s ease forwards;
+}
+
+.friend-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.friend-card h2 {
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+.friend-card p {
+  font-size: 14px;
+  color: #444;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.back-button {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.back-button a {
+  text-decoration: none;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  color: #333;
+  transition: 0.3s;
+}
+
+.back-button a:hover {
+  background-color: #eaeaea;
+}
+
+/* 위로 등장 애니메이션 */
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.love-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: slideUp 1s ease forwards;
+}
+
+.love-card img {
+  width: 250px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.love-text {
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.highlight-box {
+  margin-top: 20px;
+  padding: 10px;
+  background: linear-gradient(to right, #ffddee, #ffeef8);
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #aa2266;
+  box-shadow: 0 0 5px rgba(255, 192, 203, 0.3);
+}
+.love-title {
+  font-size: 26px;
+  color: #444;
+  margin-top: 40px;
+  animation: slideUp 1s ease-in-out;
+}
+
+.love-subtitle {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 30px;
+  font-style: italic;
+  animation: slideUp 1.2s ease-in-out;
+}
+
+.love-story {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px;
+}
+
+.love-section {
+  text-align: center;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.love-image {
+  width: 250px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.love-text h2 {
+  font-size: 20px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.love-text p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* 슬픔 이미지 전용 클래스 */
+.love-section img.love-image {
+  margin-top: 10px;
+}
+.gallery-title {
+  text-align: center;
+  font-size: 2em;
+  margin-top: 40px;
+  color: #444;
+}
+
+.gallery-subtitle {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #777;
+  font-size: 1em;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  padding: 0 30px 40px;
+  justify-items: center;
+}
+
+.gallery-grid img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* fade-in 전체 페이지 효과 */
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* slide-up 전체 컨테이너 효과 */
+.slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 이미지 하나씩 순차적으로 나타나는 효과 */
+.fade-in-img {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 딜레이 클래스 (사진마다 순차 애니메이션) */
+.delay-1  { animation-delay: 0.1s; }
+.delay-2  { animation-delay: 0.2s; }
+.delay-3  { animation-delay: 0.3s; }
+.delay-4  { animation-delay: 0.4s; }
+.delay-5  { animation-delay: 0.5s; }
+.delay-6  { animation-delay: 0.6s; }
+.delay-7  { animation-delay: 0.7s; }
+.delay-8  { animation-delay: 0.8s; }
+.delay-9  { animation-delay: 0.9s; }
+.delay-10 { animation-delay: 1.0s; }
