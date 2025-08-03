@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>월별 수익 계산기 (얼마나 벌어야 할까?)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+        :root {
+            --primary-color: #56a3f5;
+            --primary-gradient: linear-gradient(45deg, #56a3f5, #89c3ff);
+            --primary-hover-gradient: linear-gradient(45deg, #4a91e0, #7ab2f0);
+            --background-color: #f0f2f5;
+            --card-background-color: #ffffff;
+            --text-color: #333;
+            --label-color: #555;
+            --border-color: #dde2e7;
+            --input-background: #f8f9fa;
+        }
+        body {
+            margin: 0;
+            font-family: 'Noto Sans KR', 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .background-emojis span {
+            position: absolute;
+            color: var(--primary-color);
+            font-size: 2rem;
+            opacity: 0.15;
+            animation: float 15s infinite linear;
+            z-index: 0;
+        }
+        .background-emojis span:nth-child(1) { top: 10%; left: 15%; animation-duration: 18s; }
+        .background-emojis span:nth-child(2) { top: 20%; left: 80%; animation-duration: 14s; }
+        .background-emojis span:nth-child(3) { top: 70%; left: 10%; animation-duration: 20s; }
+        .background-emojis span:nth-child(4) { top: 80%; left: 85%; animation-duration: 12s; }
+        .background-emojis span:nth-child(5) { top: 40%; left: 5%; animation-duration: 22s; }
+        .background-emojis span:nth-child(6) { top: 50%; left: 90%; animation-duration: 16s; }
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-120vh) rotate(360deg); }
+        }
+        .calculator-container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 500px;
+            background-color: var(--card-background-color);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .calculator-container h1 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .calculator-container p {
+            margin-top: 0;
+            margin-bottom: 30px;
+            color: var(--label-color);
+        }
+        form {
+            text-align: left;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--label-color);
+            font-size: 1rem;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            background-color: var(--input-background);
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        input[type="number"]:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(86, 163, 245, 0.15);
+        }
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: var(--primary-gradient);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+        button[type="submit"]:hover {
+            background: var(--primary-hover-gradient);
+            box-shadow: 0 4px 15px rgba(86, 163, 245, 0.3);
+            transform: translateY(-3px);
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .checkbox-container input {
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+            accent-color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="background-emojis">
+        <span>💰</span>
+        <span>✨</span>
+        <span>💵</span>
+        <span>📈</span>
+        <span>🪙</span>
+        <span>💎</span>
+    </div>
+    <div class="calculator-container">
+        <h1>💰 월별 수익 계산기</h1>
+        <p>목표를 달성하기 위해 매달 얼마의 수익을 내야 할까요?</p>
+        <form id="profit-form" action="/calculate" method="post">
+            <div class="form-group">
+                <label for="total_months">🗓️ 총 개월 수:</label>
+                <input type="number" id="total_months" name="total_months" placeholder="예: 12" required>
+            </div>
+            <div class="form-group">
+                <label for="initial_capital">🌱 초기 자본 (만 원):</label>
+                <input type="number" id="initial_capital" name="initial_capital" placeholder="예: 1000" required>
+            </div>
+            <div class="form-group">
+                <label for="monthly_contribution">💸 매달 추가금 (만 원):</label>
+                <input type="number" id="monthly_contribution" name="monthly_contribution" placeholder="예: 200" required>
+            </div>
+            <div class="form-group">
+                <label for="target_profit">🎯 목표 수익 (만 원):</label>
+                <input type="number" id="target_profit" name="target_profit" placeholder="예: 5000" required>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="include_first_month" name="include_first_month" value="true">
+                <label for="include_first_month">첫 달 월급 포함</label>
+            </div>
+            <button type="submit">
+                <span>계산하기</span>
+                <span>🚀</span>
+            </button>
+        </form>
+    </div>
+</body>
+</html>
