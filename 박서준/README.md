@@ -29,7 +29,7 @@ node.js와 socket.io 서버는 클라이언트 소켓연결을 수립하고, 유
 ## 실행방법
 ```
 1. nodejs설치
-2. git clone 또는 그냥 다운
+2. 레포 git clone 또는 그냥 다운
 3. vscode 혹은 cmd 실행후 html-paint 폴더열기
 4. npm i 입력
 5. npm start 입력
