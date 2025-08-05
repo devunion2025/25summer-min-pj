@@ -10,7 +10,7 @@
 
 - 사용 언어
 
-C언어, HTML, python
+HTML, JAVAScript
 
 - 만든 사람
 
