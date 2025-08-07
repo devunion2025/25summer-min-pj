@@ -20,9 +20,11 @@ TLS의 동작 구조와 핸드셰이크 과정을 텍스트,  애니메이션 �
 https://coddi2.github.io/tls-webpage-intro/#/
 
 ---
-## 🧑‍💻 사용 기술 스택
+## 🧑‍💻 사용 언어 및 스택
 
 - **React.js** (프론트엔드 프레임워크)
 - **JavaScript (ES6)** / **JSX**
 - **Tailwind CSS**
 - **Vite** (개발 서버 및 번들링 도구)
+---
+제작자: 박지혜
