@@ -12,9 +12,9 @@ TLS의 동작 구조와 핸드셰이크 과정을 텍스트,  애니메이션 �
 ---
 
 ## 로컬 실행 방법 (Vite + React)
-cd ~/tls-webpage
-npm install
-npm run dev
+- cd ~/tls-webpage
+- npm install
+- npm run dev
 
 ## 웹사이트 실행 방법 (메인페이지 이동 오류로 뒤로가기 누르셔야합니다.)
 https://coddi2.github.io/tls-webpage-intro/#/
